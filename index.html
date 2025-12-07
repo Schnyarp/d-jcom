@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>d-j.com — Premium Domain For Sale</title>
+  <meta name="description" content="d-j.com — short, memorable domain ideal for DJs, music tech, streaming projects, audio brands and nightlife experiences. Submit an offer to purchase." />
+  <meta property="og:title" content="d-j.com — Premium Domain For Sale" />
+  <meta property="og:description" content="d-j.com — premium domain for DJ brands, audio apps, music marketplaces, events and nightlife platforms. Contact domain@d-j.com" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --max-width:1100px;
+      --panel-bg: #ffffff;
+      --muted: #9aa3b0;
+      --neon1: #7cfffb;   /* cyan */
+      --neon2: #ff69c8;   /* pink */
+      --neon3: #ffd36b;   /* warm gold */
+      --ink: #07121a;
+      --bg-dark-1: #05040a;
+      --bg-dark-2: #0b1020;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:36px 20px;
+      background:
+        radial-gradient(800px 360px at 12% 14%, rgba(124,255,251,0.03), transparent 10%),
+        linear-gradient(180deg,var(--bg-dark-1) 0%, var(--bg-dark-2) 100%);
+      color:var(--panel-bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      overflow:hidden;
+    }
+
+    /* Background chosen by assistant:
+       "Neon club / DJ console" — animated equalizer bars, vinyl radial vignette,
+       floating musical notes and subtle neon gradients to convey music & nightlife.
+    */
+    .bg {
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .vinyl-vignette {
+      position:absolute;
+      left:50%;
+      top:30%;
+      width:1200px;
+      height:1200px;
+      transform:translate(-50%,-20%);
+      background: radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.004) 18%, transparent 40%);
+      mix-blend-mode:screen;
+      opacity:0.9;
+      filter: blur(36px);
+    }
+
+    /* equalizer bars */
+    .eq {
+      position:fixed;
+      left:50%;
+      top:60%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:6px;
+      align-items:end;
+      z-index:0;
+      pointer-events:none;
+      width:76%;
+      max-width:1100px;
+      height:260px;
+      opacity:0.65;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.6));
+      mix-blend-mode: screen;
+    }
+
+    .bar {
+      width:10px;
+      background: linear-gradient(180deg, var(--neon2), var(--neon1));
+      border-radius:4px;
+      transform-origin:bottom;
+      animation: bounce 1200ms linear infinite;
+      opacity:0.95;
+    }
+
+    /* staggered speeds/delays via inline style on elements */
+    @keyframes bounce {
+      0% { transform: scaleY(0.08); opacity:0.6; }
+      25% { transform: scaleY(0.6); opacity:1; }
+      50% { transform: scaleY(0.28); opacity:0.8; }
+      75% { transform: scaleY(0.72); opacity:1; }
+      100% { transform: scaleY(0.08); opacity:0.6; }
+    }
+
+    /* floating musical notes */
+    .notes {
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      overflow:visible;
+    }
+    .note {
+      position:absolute;
+      width:36px;
+      height:36px;
+      background-size:contain;
+      background-repeat:no-repeat;
+      opacity:0.08;
+      will-change: transform, opacity;
+      mix-blend-mode:screen;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+    }
+
+    @keyframes floatNote {
+      0% { transform: translateY(0) rotate(-6deg); opacity:0.06; }
+      50% { transform: translateY(-28px) rotate(6deg); opacity:0.18; }
+      100% { transform: translateY(0) rotate(-6deg); opacity:0.06; }
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      padding:36px;
+      border-radius:20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px) saturate(1.02);
+      border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 32px 110px rgba(0,0,0,0.6);
+      position:relative;
+      z-index:2;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .brand{ display:flex; gap:16px; align-items:center; }
+    .logo {
+      width:86px;
+      height:86px;
+      border-radius:14px;
+      background: linear-gradient(135deg,var(--neon2), var(--neon1));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#07121a;
+      font-weight:900;
+      font-size:26px;
+      box-shadow: 0 18px 60px rgba(124,255,251,0.06);
+      border:1px solid rgba(255,255,255,0.04);
+      flex-shrink:0;
+    }
+
+    h1{ margin:0; font-size:28px; color:var(--panel-bg); letter-spacing:0.2px; }
+    p.lead{ margin:6px 0 0; color:var(--muted); font-size:14px; max-width:720px; }
+
+    .grid {
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:28px;
+      align-items:start;
+      margin-top:8px;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, rgba(124,255,251,0.02), rgba(255,105,200,0.01));
+      padding:16px 18px;
+      border-radius:12px;
+      color:var(--panel-bg);
+      margin-bottom:16px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero p{ margin:0; font-size:15px; color:var(--panel-bg); }
+
+    .panel {
+      background: var(--panel-bg);
+      color:var(--ink);
+      padding:22px;
+      border-radius:14px;
+      box-shadow: 0 10px 28px rgba(2,8,12,0.06);
+      border: 1px solid rgba(2,8,12,0.03);
+      max-width:820px;
+    }
+
+    h2{ margin-top:0; font-size:20px; color:var(--ink); }
+    .features ul{ margin:0; padding-left:18px; color:var(--muted); }
+    .features li{ margin-bottom:10px; }
+
+    .cta-row{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; align-items:center; }
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+      border:0;
+    }
+    .btn-primary{
+      background: linear-gradient(90deg,var(--neon2), var(--neon1));
+      color:#07121a;
+      box-shadow: 0 12px 36px rgba(124,255,251,0.12);
+    }
+    .btn-ghost{
+      background:transparent;
+      border:1px solid rgba(2,8,12,0.06);
+      color:var(--muted);
+    }
+
+    .price { margin-top:12px; font-weight:700; color:var(--ink); font-size:16px; }
+    .muted-small { color:var(--muted); font-size:13px; margin-top:6px; }
+
+    .contact-card{
+      position:sticky;
+      top:32px;
+      align-self:start;
+      background: linear-gradient(180deg, rgba(255,255,255,0.995), rgba(255,255,255,0.98));
+      padding:18px;
+      border-radius:12px;
+      border:1px solid rgba(2,8,12,0.03);
+      box-shadow: 0 8px 26px rgba(2,8,12,0.035);
+      max-width:360px;
+    }
+
+    .contact-card h3{ margin:0 0 8px 0; font-size:16px; color:var(--ink); }
+    .contact-email, .contact-email a{
+      white-space:nowrap;
+      display:inline-block;
+      font-weight:800;
+      color:var(--neon1);
+      word-break: normal;
+      font-size:0.98rem;
+      text-decoration:none;
+    }
+
+    form label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+    form input, form textarea {
+      width:100%;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(2,8,12,0.06);
+      background:#fff;
+      color:var(--ink);
+      font-size:14px;
+      margin-bottom:12px;
+    }
+    form textarea{ min-height:110px; resize:vertical; }
+
+    footer{ margin-top:18px; color:var(--muted); font-size:13px; text-align:center; }
+
+    @media (max-width:980px){
+      .grid{ grid-template-columns: 1fr; gap:18px; }
+      .contact-card{ position:relative; top:auto; width:100%; max-width:none; }
+      .container{ padding:22px; }
+      .logo{ width:72px; height:72px; border-radius:12px; }
+      h1{ font-size:22px; }
+      .eq, .notes, .vinyl-vignette { display:none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "url":"https://d-j.com",
+        "name":"d-j.com",
+        "description":"d-j.com — premium domain for DJs, music tech, nightlife brands, event platforms and audio products."
+      },
+      {
+        "@type":"ContactPoint",
+        "contactType":"sales",
+        "email":"domain@d-j.com"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="vinyl-vignette"></div>
+
+    <div class="eq" id="eq"></div>
+
+    <div class="notes" id="notesLayer"></div>
+  </div>
+
+  <main class="container" role="main" aria-labelledby="main-heading">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">D•J</div>
+        <div>
+          <h1 id="main-heading">d-j.com</h1>
+          <p class="lead">Short, iconic domain — great for DJs, music apps, event brands, audio gear and nightlife platforms.</p>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="color:var(--muted);font-size:13px">For inquiries</div>
+        <div class="contact-email"><a href="mailto:domain@d-j.com">domain@d-j.com</a></div>
+      </div>
+    </header>
+
+    <div class="hero" role="note" aria-live="polite">
+      <p>d-j.com is a concise, brandable .com that reads instantly — ideal for artists, music tech startups, event discovery, streaming projects, and nightlife experiences.</p>
+    </div>
+
+    <section class="grid" aria-label="Main content">
+      <div>
+        <article class="panel" aria-labelledby="why-title">
+          <h2 id="why-title">Why d-j.com?</h2>
+          <p class="lead">A memorable short domain that signals audio and performance. Perfect for DJs, record labels, music apps, event marketplaces and audio equipment brands.</p>
+
+          <div class="features" style="margin-top:12px">
+            <ul>
+              <li>Short, brandable and genre-neutral — works across electronic, hip-hop, pop and live events</li>
+              <li>Great for artist pages, booking platforms, DJ tools, streaming services and hardware brands</li>
+              <li>Highly visual — strong logo and neon-styled marketing potential</li>
+            </ul>
+          </div>
+
+          <div class="cta-row" role="group" aria-label="Actions">
+            <a class="btn btn-primary" href="#" id="inquireBtn">Make an Offer</a>
+            <a class="btn btn-ghost" href="mailto:domain@d-j.com?subject=Domain%20Offer%20-%20d-j.com">Email Now</a>
+          </div>
+
+          <div class="price">Domain: d-j.com</div>
+          <div class="muted-small">Serious offers only. Transfer via escrow recommended for secure and trusted transactions.</div>
+        </article>
+
+        <article class="panel" style="margin-top:18px" aria-labelledby="about-title">
+          <h3 id="about-title" style="margin-top:0">About this domain</h3>
+          <p class="lead">D‑J.com is ideal for creators and companies building music-first products — from artist branding and event marketplaces to audio tools and community platforms.</p>
+
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Great for DJs, artists, event planners, music apps, streaming platforms and hardware</li>
+            <li>Useful for branding, marketing, ticketing, and in-app identities</li>
+            <li>Transfer-ready — escrow recommended to ensure a secure and verifiable transfer</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="contact-card" aria-label="Contact & offer">
+        <div>
+          <h3 style="margin-top:0">Contact & Offer</h3>
+          <p style="margin-top:6px;color:var(--muted)">Submit an offer — this form opens your email client with the details prefilled. Or email <a href="mailto:domain@d-j.com" class="contact-email">domain@d-j.com</a>.</p>
+
+          <form id="inquiryForm" onsubmit="handleSubmit(event)" aria-label="Domain offer form">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="offer">Your offer (USD)</label>
+            <input id="offer" name="offer" type="text" placeholder="Enter your offer (USD)" required />
+
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" type="text" placeholder="Your company or organization" />
+
+            <label for="country">Country</label>
+            <input id="country" name="country" type="text" placeholder="Your country" required />
+
+            <label for="phone">Phone number (optional)</label>
+            <input id="phone" name="phone" type="tel" />
+
+            <label for="message">Message (questions, timeline, escrow preference)</label>
+            <textarea id="message" name="message" placeholder="Hi — I'm submitting an offer for d-j.com. Please share transfer instructions and next steps."></textarea>
+
+            <button class="btn btn-primary" type="submit" style="width:100%; margin-top:6px">Send Offer</button>
+          </form>
+
+          <footer style="margin-top:10px; text-align:left; color:var(--muted); font-size:13px">
+            Prefer a direct email? <a href="mailto:domain@d-j.com" style="color:var(--neon1)" class="contact-email">domain@d-j.com</a>
+          </footer>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      &copy; 2025 d-j.com. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // Build equalizer bars (randomized heights & staggered animations)
+    (function buildEQ(){
+      const eq = document.getElementById('eq');
+      if(!eq) return;
+      const bars = 64;
+      for(let i=0;i<bars;i++){
+        const b = document.createElement('div');
+        b.className = 'bar';
+        // random base height so animation scaleY is visible
+        const baseHeight = 6 + Math.floor(Math.random()*68);
+        b.style.height = baseHeight + 'px';
+        // stagger animation duration and delay
+        const dur = 900 + Math.random()*900;
+        const delay = Math.random()*800;
+        b.style.animationDuration = dur + 'ms';
+        b.style.animationDelay = delay + 'ms';
+        // color variance
+        const mix = Math.random();
+        b.style.background = `linear-gradient(180deg, ${mix > 0.6 ? 'var(--neon3)' : mix > 0.3 ? 'var(--neon2)' : 'var(--neon1)'} , rgba(255,255,255,0.08))`;
+        eq.appendChild(b);
+      }
+    })();
+
+    // floating musical notes
+    (function placeNotes(){
+      const layer = document.getElementById('notesLayer');
+      if(!layer) return;
+      const svgNote = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M9 17V5l10-2v12'/><circle cx='7' cy='17' r='3' fill='%23ffffff' opacity='0.12'/></svg>`);
+      const count = 8;
+      for(let i=0;i<count;i++){
+        const n = document.createElement('div');
+        n.className = 'note';
+        n.style.backgroundImage = `url("data:image/svg+xml;utf8,${svgNote}")`;
+        n.style.left = (6 + Math.random()*88) + 'vw';
+        n.style.top = (6 + Math.random()*82) + 'vh';
+        const dur = 6000 + Math.random()*9000;
+        n.style.animation = `floatNote ${dur}ms ease-in-out ${Math.random()*2000}ms infinite`;
+        n.style.opacity = 0.04 + Math.random()*0.14;
+        layer.appendChild(n);
+      }
+    })();
+
+    // Compose mailto: from form fields to open the user's email client.
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const offer = document.getElementById('offer').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Domain Offer - d-j.com');
+      const bodyText =
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Company: ${company || '(not provided)'}\n` +
+        `Offer (USD): ${offer}\n` +
+        `Country: ${country}\n` +
+        `Phone: ${phone || '(not provided)'}\n\n` +
+        `Message:\n${message}\n\n---\nSent from d-j.com offer form`;
+
+      const body = encodeURIComponent(bodyText);
+      const mailto = `mailto:domain@d-j.com?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    }
+
+    document.getElementById('inquireBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const form = document.getElementById('inquiryForm');
+      if(window.innerWidth < 900){
+        form.scrollIntoView({behavior:'smooth', block:'center'});
+        form.querySelector('input').focus();
+      } else {
+        const subject = encodeURIComponent('Domain Offer - d-j.com');
+        const body = encodeURIComponent('Hi — I would like to make an offer for d-j.com. Please reply with transfer instructions and next steps.');
+        window.location.href = `mailto:domain@d-j.com?subject=${subject}&body=${body}`;
+      }
+    });
+  </script>
+</body>
+</html>
